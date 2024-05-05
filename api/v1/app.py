@@ -17,7 +17,7 @@ if __name__ == "__main__":
     PORT = int(getenv('HBNB_API_PORT', 5000))
     app.run(host=HOST, port=PORT, threaded=True)
 
-
+CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 @app.teardown_appcontext
 def teardown_engine(exception):
     '''Status of your API'''
